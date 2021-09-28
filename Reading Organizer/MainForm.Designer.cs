@@ -1,7 +1,7 @@
 ﻿
 namespace Reading_Organizer
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -31,15 +31,15 @@ namespace Reading_Organizer
         {
             this.btnGenerate = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.daysOfTheWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontSettingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.outputLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.menOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.menSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.menSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.menPreferences = new System.Windows.Forms.ToolStripMenuItem();
+            this.menDateFormat = new System.Windows.Forms.ToolStripMenuItem();
+            this.menFontSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.menOutputLocation = new System.Windows.Forms.ToolStripMenuItem();
             this.cntReading = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numRestDays = new System.Windows.Forms.NumericUpDown();
@@ -106,77 +106,77 @@ namespace Reading_Organizer
             // 
             this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.preferencesToolStripMenuItem});
+            this.menFile,
+            this.menPreferences});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(514, 36);
+            this.menu.Size = new System.Drawing.Size(514, 33);
             this.menu.TabIndex = 1;
-            this.menu.Text = "menuStrip1";
+            this.menu.Text = "menu";
             // 
-            // toolStripMenuItem1
+            // menFile
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.daysOfTheWeekToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(54, 32);
-            this.toolStripMenuItem1.Text = "File";
+            this.menFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menNew,
+            this.menOpen,
+            this.menSave,
+            this.menSaveAs});
+            this.menFile.Name = "menFile";
+            this.menFile.Size = new System.Drawing.Size(54, 29);
+            this.menFile.Text = "File";
             // 
-            // daysOfTheWeekToolStripMenuItem
+            // menNew
             // 
-            this.daysOfTheWeekToolStripMenuItem.Name = "daysOfTheWeekToolStripMenuItem";
-            this.daysOfTheWeekToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.daysOfTheWeekToolStripMenuItem.Text = "New";
+            this.menNew.Name = "menNew";
+            this.menNew.Size = new System.Drawing.Size(185, 34);
+            this.menNew.Text = "New";
             // 
-            // openToolStripMenuItem
+            // menOpen
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.openToolStripMenuItem.Text = "Open...";
+            this.menOpen.Name = "menOpen";
+            this.menOpen.Size = new System.Drawing.Size(185, 34);
+            this.menOpen.Text = "Open...";
             // 
-            // saveToolStripMenuItem
+            // menSave
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.saveToolStripMenuItem.Text = "Save";
+            this.menSave.Name = "menSave";
+            this.menSave.Size = new System.Drawing.Size(185, 34);
+            this.menSave.Text = "Save";
             // 
-            // saveAsToolStripMenuItem
+            // menSaveAs
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.saveAsToolStripMenuItem.Text = "Save as...";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            this.menSaveAs.Name = "menSaveAs";
+            this.menSaveAs.Size = new System.Drawing.Size(185, 34);
+            this.menSaveAs.Text = "Save as...";
+            this.menSaveAs.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
-            // preferencesToolStripMenuItem
+            // menPreferences
             // 
-            this.preferencesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fontSettingsToolStripMenuItem,
-            this.fontSettingsToolStripMenuItem1,
-            this.outputLocationToolStripMenuItem});
-            this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(118, 32);
-            this.preferencesToolStripMenuItem.Text = "Preferences";
+            this.menPreferences.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menDateFormat,
+            this.menFontSettings,
+            this.menOutputLocation});
+            this.menPreferences.Name = "menPreferences";
+            this.menPreferences.Size = new System.Drawing.Size(118, 29);
+            this.menPreferences.Text = "Preferences";
             // 
-            // fontSettingsToolStripMenuItem
+            // menDateFormat
             // 
-            this.fontSettingsToolStripMenuItem.Name = "fontSettingsToolStripMenuItem";
-            this.fontSettingsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.fontSettingsToolStripMenuItem.Text = "Date format...";
+            this.menDateFormat.Name = "menDateFormat";
+            this.menDateFormat.Size = new System.Drawing.Size(251, 34);
+            this.menDateFormat.Text = "Date format...";
             // 
-            // fontSettingsToolStripMenuItem1
+            // menFontSettings
             // 
-            this.fontSettingsToolStripMenuItem1.Name = "fontSettingsToolStripMenuItem1";
-            this.fontSettingsToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
-            this.fontSettingsToolStripMenuItem1.Text = "Font settings...";
+            this.menFontSettings.Name = "menFontSettings";
+            this.menFontSettings.Size = new System.Drawing.Size(251, 34);
+            this.menFontSettings.Text = "Font settings...";
             // 
-            // outputLocationToolStripMenuItem
+            // menOutputLocation
             // 
-            this.outputLocationToolStripMenuItem.Name = "outputLocationToolStripMenuItem";
-            this.outputLocationToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.outputLocationToolStripMenuItem.Text = "Output location...";
+            this.menOutputLocation.Name = "menOutputLocation";
+            this.menOutputLocation.Size = new System.Drawing.Size(251, 34);
+            this.menOutputLocation.Text = "Output location...";
             // 
             // cntReading
             // 
@@ -610,9 +610,10 @@ namespace Reading_Organizer
             // saveFileDialog
             // 
             this.saveFileDialog.DefaultExt = "rot";
+            this.saveFileDialog.Filter = "RS Reading Organizer Template file (*.rot) | All files (*.*)";
             this.saveFileDialog.Title = "Save RS Reading Organizer template";
             // 
-            // mainForm
+            // MainForm
             // 
             this.AcceptButton = this.btnGenerate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -628,7 +629,7 @@ namespace Reading_Organizer
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(439, 662);
-            this.Name = "mainForm";
+            this.Name = "MainForm";
             this.Text = "RS Reading Organizer";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -651,12 +652,12 @@ namespace Reading_Organizer
 
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem daysOfTheWeekToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menFile;
+        private System.Windows.Forms.ToolStripMenuItem menNew;
+        private System.Windows.Forms.ToolStripMenuItem menOpen;
+        private System.Windows.Forms.ToolStripMenuItem menSave;
+        private System.Windows.Forms.ToolStripMenuItem menSaveAs;
+        private System.Windows.Forms.ToolStripMenuItem menPreferences;
         private System.Windows.Forms.GroupBox cntReading;
         private System.Windows.Forms.GroupBox cntDate;
         private System.Windows.Forms.RadioButton radEndDate;
@@ -671,7 +672,7 @@ namespace Reading_Organizer
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chkTotalPages;
-        private System.Windows.Forms.ToolStripMenuItem fontSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menDateFormat;
         private System.Windows.Forms.TextBox txt7;
         private System.Windows.Forms.TextBox txt6;
         private System.Windows.Forms.TextBox txt5;
@@ -696,8 +697,8 @@ namespace Reading_Organizer
         private System.Windows.Forms.MaskedTextBox txtTotalPages;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numRestDays;
-        private System.Windows.Forms.ToolStripMenuItem fontSettingsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem outputLocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menFontSettings;
+        private System.Windows.Forms.ToolStripMenuItem menOutputLocation;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

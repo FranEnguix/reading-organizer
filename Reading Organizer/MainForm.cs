@@ -21,9 +21,10 @@ using iText.IO.Font.Constants;
 
 namespace Reading_Organizer
 {
-    public partial class mainForm : Form
+    public partial class MainForm : Form
     {
-        public mainForm()
+
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -114,7 +115,7 @@ namespace Reading_Organizer
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.saveFileDialog.ShowDialog();
+            Console.WriteLine(this.saveFileDialog.ShowDialog());
             
         }
 
