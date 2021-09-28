@@ -111,5 +111,15 @@ namespace Reading_Organizer
         private void radioButton1_CheckedChanged(object sender, EventArgs e) {
 
         }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.saveFileDialog.ShowDialog();
+            
+        }
+
+        private void checkBox8_CheckedChanged(object sender, EventArgs e) {
+
+        }
     }
 }
