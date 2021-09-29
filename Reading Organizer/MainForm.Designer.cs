@@ -63,7 +63,6 @@ namespace Reading_Organizer
             this.radEveryDay = new System.Windows.Forms.RadioButton();
             this.cntDate = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtProgressPerDay = new System.Windows.Forms.MaskedTextBox();
             this.radProgressPerDay = new System.Windows.Forms.RadioButton();
             this.radEndDate = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,9 +75,10 @@ namespace Reading_Organizer
             this.cntBook = new System.Windows.Forms.GroupBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTotalPages = new System.Windows.Forms.MaskedTextBox();
             this.chkTotalPages = new System.Windows.Forms.CheckBox();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.numTotalPages = new System.Windows.Forms.NumericUpDown();
+            this.numProgressPerDay = new System.Windows.Forms.NumericUpDown();
             this.menu.SuspendLayout();
             this.cntReading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRestDays)).BeginInit();
@@ -86,6 +86,8 @@ namespace Reading_Organizer
             this.cntDate.SuspendLayout();
             this.cntDay.SuspendLayout();
             this.cntBook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTotalPages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numProgressPerDay)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGenerate
@@ -96,10 +98,9 @@ namespace Reading_Organizer
             this.btnGenerate.Location = new System.Drawing.Point(18, 780);
             this.btnGenerate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(477, 35);
+            this.btnGenerate.Size = new System.Drawing.Size(491, 35);
             this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "Generate PDF";
-            this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.button1_Click);
             // 
             // menu
@@ -110,7 +111,7 @@ namespace Reading_Organizer
             this.menPreferences});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(514, 33);
+            this.menu.Size = new System.Drawing.Size(528, 33);
             this.menu.TabIndex = 1;
             this.menu.Text = "menu";
             // 
@@ -204,7 +205,7 @@ namespace Reading_Organizer
             this.cntReading.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cntReading.Name = "cntReading";
             this.cntReading.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cntReading.Size = new System.Drawing.Size(477, 351);
+            this.cntReading.Size = new System.Drawing.Size(491, 351);
             this.cntReading.TabIndex = 2;
             this.cntReading.TabStop = false;
             this.cntReading.Text = "Reading";
@@ -417,8 +418,8 @@ namespace Reading_Organizer
             // 
             // cntDate
             // 
+            this.cntDate.Controls.Add(this.numProgressPerDay);
             this.cntDate.Controls.Add(this.label3);
-            this.cntDate.Controls.Add(this.txtProgressPerDay);
             this.cntDate.Controls.Add(this.radProgressPerDay);
             this.cntDate.Controls.Add(this.radEndDate);
             this.cntDate.Controls.Add(this.label1);
@@ -428,7 +429,7 @@ namespace Reading_Organizer
             this.cntDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cntDate.Name = "cntDate";
             this.cntDate.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cntDate.Size = new System.Drawing.Size(477, 202);
+            this.cntDate.Size = new System.Drawing.Size(491, 202);
             this.cntDate.TabIndex = 3;
             this.cntDate.TabStop = false;
             this.cntDate.Text = "Date";
@@ -436,27 +437,17 @@ namespace Reading_Organizer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(384, 156);
+            this.label3.Location = new System.Drawing.Point(349, 156);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "percentage/pages.";
             // 
-            // txtProgressPerDay
-            // 
-            this.txtProgressPerDay.Location = new System.Drawing.Point(268, 153);
-            this.txtProgressPerDay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtProgressPerDay.Mask = "99999";
-            this.txtProgressPerDay.Name = "txtProgressPerDay";
-            this.txtProgressPerDay.Size = new System.Drawing.Size(108, 26);
-            this.txtProgressPerDay.TabIndex = 6;
-            this.txtProgressPerDay.ValidatingType = typeof(int);
-            // 
             // radProgressPerDay
             // 
             this.radProgressPerDay.AutoSize = true;
-            this.radProgressPerDay.Location = new System.Drawing.Point(30, 154);
+            this.radProgressPerDay.Location = new System.Drawing.Point(14, 152);
             this.radProgressPerDay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radProgressPerDay.Name = "radProgressPerDay";
             this.radProgressPerDay.Size = new System.Drawing.Size(230, 24);
@@ -468,7 +459,7 @@ namespace Reading_Organizer
             // 
             this.radEndDate.AutoSize = true;
             this.radEndDate.Checked = true;
-            this.radEndDate.Location = new System.Drawing.Point(30, 100);
+            this.radEndDate.Location = new System.Drawing.Point(15, 100);
             this.radEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radEndDate.Name = "radEndDate";
             this.radEndDate.Size = new System.Drawing.Size(102, 24);
@@ -481,7 +472,7 @@ namespace Reading_Organizer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 49);
+            this.label1.Location = new System.Drawing.Point(34, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
@@ -490,7 +481,7 @@ namespace Reading_Organizer
             // 
             // datEnd
             // 
-            this.datEnd.Location = new System.Drawing.Point(141, 100);
+            this.datEnd.Location = new System.Drawing.Point(142, 100);
             this.datEnd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datEnd.Name = "datEnd";
             this.datEnd.Size = new System.Drawing.Size(298, 26);
@@ -498,7 +489,7 @@ namespace Reading_Organizer
             // 
             // datStart
             // 
-            this.datStart.Location = new System.Drawing.Point(141, 45);
+            this.datStart.Location = new System.Drawing.Point(142, 45);
             this.datStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datStart.Name = "datStart";
             this.datStart.Size = new System.Drawing.Size(298, 26);
@@ -509,11 +500,11 @@ namespace Reading_Organizer
             this.cntDay.Controls.Add(this.chkDate);
             this.cntDay.Controls.Add(this.chkCurrentPage);
             this.cntDay.Controls.Add(this.chkBookPercentage);
-            this.cntDay.Location = new System.Drawing.Point(265, 42);
+            this.cntDay.Location = new System.Drawing.Point(275, 42);
             this.cntDay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cntDay.Name = "cntDay";
             this.cntDay.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cntDay.Size = new System.Drawing.Size(230, 154);
+            this.cntDay.Size = new System.Drawing.Size(234, 154);
             this.cntDay.TabIndex = 4;
             this.cntDay.TabStop = false;
             this.cntDay.Text = "Day info";
@@ -553,15 +544,15 @@ namespace Reading_Organizer
             // 
             // cntBook
             // 
+            this.cntBook.Controls.Add(this.numTotalPages);
             this.cntBook.Controls.Add(this.txtTitle);
             this.cntBook.Controls.Add(this.label2);
-            this.cntBook.Controls.Add(this.txtTotalPages);
             this.cntBook.Controls.Add(this.chkTotalPages);
             this.cntBook.Location = new System.Drawing.Point(18, 42);
             this.cntBook.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cntBook.Name = "cntBook";
             this.cntBook.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cntBook.Size = new System.Drawing.Size(224, 154);
+            this.cntBook.Size = new System.Drawing.Size(234, 154);
             this.cntBook.TabIndex = 5;
             this.cntBook.TabStop = false;
             this.cntBook.Text = "Book info";
@@ -572,7 +563,7 @@ namespace Reading_Organizer
             this.txtTitle.Location = new System.Drawing.Point(15, 57);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(186, 26);
+            this.txtTitle.Size = new System.Drawing.Size(206, 26);
             this.txtTitle.TabIndex = 5;
             // 
             // label2
@@ -584,17 +575,6 @@ namespace Reading_Organizer
             this.label2.Size = new System.Drawing.Size(38, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Title";
-            // 
-            // txtTotalPages
-            // 
-            this.txtTotalPages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalPages.Location = new System.Drawing.Point(136, 102);
-            this.txtTotalPages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTotalPages.Mask = "9999999";
-            this.txtTotalPages.Name = "txtTotalPages";
-            this.txtTotalPages.Size = new System.Drawing.Size(64, 26);
-            this.txtTotalPages.TabIndex = 3;
-            this.txtTotalPages.ValidatingType = typeof(int);
             // 
             // chkTotalPages
             // 
@@ -613,12 +593,67 @@ namespace Reading_Organizer
             this.saveFileDialog.Filter = "RS Reading Organizer Template file (*.rot) | All files (*.*)";
             this.saveFileDialog.Title = "Save RS Reading Organizer template";
             // 
+            // numTotalPages
+            // 
+            this.numTotalPages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numTotalPages.Location = new System.Drawing.Point(141, 104);
+            this.numTotalPages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numTotalPages.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numTotalPages.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTotalPages.Name = "numTotalPages";
+            this.numTotalPages.Size = new System.Drawing.Size(80, 26);
+            this.numTotalPages.TabIndex = 10;
+            this.numTotalPages.ThousandsSeparator = true;
+            this.numTotalPages.Value = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            // 
+            // numProgressPerDay
+            // 
+            this.numProgressPerDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numProgressPerDay.DecimalPlaces = 1;
+            this.numProgressPerDay.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numProgressPerDay.Location = new System.Drawing.Point(252, 154);
+            this.numProgressPerDay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numProgressPerDay.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numProgressPerDay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.numProgressPerDay.Name = "numProgressPerDay";
+            this.numProgressPerDay.Size = new System.Drawing.Size(80, 26);
+            this.numProgressPerDay.TabIndex = 11;
+            this.numProgressPerDay.Value = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnGenerate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 834);
+            this.ClientSize = new System.Drawing.Size(528, 834);
             this.Controls.Add(this.cntBook);
             this.Controls.Add(this.cntDay);
             this.Controls.Add(this.cntDate);
@@ -628,7 +663,7 @@ namespace Reading_Organizer
             this.MainMenuStrip = this.menu;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(439, 662);
+            this.MinimumSize = new System.Drawing.Size(550, 890);
             this.Name = "MainForm";
             this.Text = "RS Reading Organizer";
             this.menu.ResumeLayout(false);
@@ -643,6 +678,8 @@ namespace Reading_Organizer
             this.cntDay.PerformLayout();
             this.cntBook.ResumeLayout(false);
             this.cntBook.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTotalPages)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numProgressPerDay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,14 +729,14 @@ namespace Reading_Organizer
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radEveryDay;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox txtProgressPerDay;
         private System.Windows.Forms.RadioButton radProgressPerDay;
-        private System.Windows.Forms.MaskedTextBox txtTotalPages;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numRestDays;
         private System.Windows.Forms.ToolStripMenuItem menFontSettings;
         private System.Windows.Forms.ToolStripMenuItem menOutputLocation;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.NumericUpDown numProgressPerDay;
+        private System.Windows.Forms.NumericUpDown numTotalPages;
     }
 }
 
