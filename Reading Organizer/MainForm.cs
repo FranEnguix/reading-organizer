@@ -18,15 +18,23 @@ using iText.Kernel.Font;
 using iText.IO.Font;
 using System.Drawing.Text;
 using iText.IO.Font.Constants;
+using System.Collections;
 
 namespace Reading_Organizer
 {
     public partial class MainForm : Form
     {
+        private Hashtable componentValues;
 
         public MainForm()
         {
+            componentValues = new Hashtable();
             InitializeComponent();
+            // TODO Load component values from file
+            // Testing purposes:
+            componentValues.Add(cmbProgressType.Name, 0);
+            // End of Testing
+            cmbProgressType.SelectedIndex = (int) componentValues[cmbProgressType.Name];
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -72,8 +80,10 @@ namespace Reading_Organizer
                 table.AddHeaderCell(cell);
             }
 
-            for (int i = 0; i < 16; i++) {
+            for (int i = 0; i < 186; i++) {
                 Table mainDiv = new Table(new float[] { 75, 25 });
+                mainDiv.SetKeepTogether(true); // Avoid splitting cells in different pages
+
                 Cell leftDiv = new Cell();
                 Cell rightDiv = new Cell();
                 mainDiv.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.RIGHT);

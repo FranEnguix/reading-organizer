@@ -62,8 +62,8 @@ namespace Reading_Organizer
             this.label4 = new System.Windows.Forms.Label();
             this.radEveryDay = new System.Windows.Forms.RadioButton();
             this.cntDate = new System.Windows.Forms.GroupBox();
+            this.cmbProgressType = new System.Windows.Forms.ComboBox();
             this.numProgressPerDay = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
             this.radProgressPerDay = new System.Windows.Forms.RadioButton();
             this.radEndDate = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -92,12 +92,11 @@ namespace Reading_Organizer
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerate.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.Location = new System.Drawing.Point(12, 510);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 513);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(327, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(326, 23);
             this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "Generate PDF";
             this.btnGenerate.Click += new System.EventHandler(this.button1_Click);
@@ -111,7 +110,7 @@ namespace Reading_Organizer
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menu.Size = new System.Drawing.Size(356, 24);
+            this.menu.Size = new System.Drawing.Size(350, 24);
             this.menu.TabIndex = 1;
             this.menu.Text = "menu";
             // 
@@ -203,7 +202,7 @@ namespace Reading_Organizer
             this.cntReading.Controls.Add(this.radEveryDay);
             this.cntReading.Location = new System.Drawing.Point(12, 133);
             this.cntReading.Name = "cntReading";
-            this.cntReading.Size = new System.Drawing.Size(327, 228);
+            this.cntReading.Size = new System.Drawing.Size(326, 237);
             this.cntReading.TabIndex = 2;
             this.cntReading.TabStop = false;
             this.cntReading.Text = "Reading";
@@ -229,49 +228,49 @@ namespace Reading_Organizer
             // 
             this.txt7.Location = new System.Drawing.Point(185, 203);
             this.txt7.Name = "txt7";
-            this.txt7.Size = new System.Drawing.Size(109, 20);
+            this.txt7.Size = new System.Drawing.Size(122, 20);
             this.txt7.TabIndex = 23;
             // 
             // txt6
             // 
             this.txt6.Location = new System.Drawing.Point(185, 180);
             this.txt6.Name = "txt6";
-            this.txt6.Size = new System.Drawing.Size(109, 20);
+            this.txt6.Size = new System.Drawing.Size(122, 20);
             this.txt6.TabIndex = 22;
             // 
             // txt5
             // 
             this.txt5.Location = new System.Drawing.Point(185, 157);
             this.txt5.Name = "txt5";
-            this.txt5.Size = new System.Drawing.Size(109, 20);
+            this.txt5.Size = new System.Drawing.Size(122, 20);
             this.txt5.TabIndex = 21;
             // 
             // txt4
             // 
             this.txt4.Location = new System.Drawing.Point(185, 135);
             this.txt4.Name = "txt4";
-            this.txt4.Size = new System.Drawing.Size(109, 20);
+            this.txt4.Size = new System.Drawing.Size(122, 20);
             this.txt4.TabIndex = 20;
             // 
             // txt3
             // 
             this.txt3.Location = new System.Drawing.Point(185, 112);
             this.txt3.Name = "txt3";
-            this.txt3.Size = new System.Drawing.Size(109, 20);
+            this.txt3.Size = new System.Drawing.Size(122, 20);
             this.txt3.TabIndex = 19;
             // 
             // txt2
             // 
             this.txt2.Location = new System.Drawing.Point(185, 89);
             this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(109, 20);
+            this.txt2.Size = new System.Drawing.Size(122, 20);
             this.txt2.TabIndex = 18;
             // 
             // txt1
             // 
             this.txt1.Location = new System.Drawing.Point(185, 66);
             this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(109, 20);
+            this.txt1.Size = new System.Drawing.Size(122, 20);
             this.txt1.TabIndex = 17;
             // 
             // chk7
@@ -396,19 +395,32 @@ namespace Reading_Organizer
             // 
             // cntDate
             // 
+            this.cntDate.Controls.Add(this.cmbProgressType);
             this.cntDate.Controls.Add(this.numProgressPerDay);
-            this.cntDate.Controls.Add(this.label3);
             this.cntDate.Controls.Add(this.radProgressPerDay);
             this.cntDate.Controls.Add(this.radEndDate);
             this.cntDate.Controls.Add(this.label1);
             this.cntDate.Controls.Add(this.datEnd);
             this.cntDate.Controls.Add(this.datStart);
-            this.cntDate.Location = new System.Drawing.Point(12, 367);
+            this.cntDate.Location = new System.Drawing.Point(12, 376);
             this.cntDate.Name = "cntDate";
-            this.cntDate.Size = new System.Drawing.Size(327, 131);
+            this.cntDate.Size = new System.Drawing.Size(326, 131);
             this.cntDate.TabIndex = 3;
             this.cntDate.TabStop = false;
             this.cntDate.Text = "Date";
+            // 
+            // cmbProgressType
+            // 
+            this.cmbProgressType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProgressType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProgressType.FormattingEnabled = true;
+            this.cmbProgressType.Items.AddRange(new object[] {
+            "percentage",
+            "pages"});
+            this.cmbProgressType.Location = new System.Drawing.Point(227, 98);
+            this.cmbProgressType.Name = "cmbProgressType";
+            this.cmbProgressType.Size = new System.Drawing.Size(80, 21);
+            this.cmbProgressType.TabIndex = 12;
             // 
             // numProgressPerDay
             // 
@@ -438,15 +450,6 @@ namespace Reading_Organizer
             0,
             0,
             0});
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(233, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "percentage/pages.";
             // 
             // radProgressPerDay
             // 
@@ -484,14 +487,14 @@ namespace Reading_Organizer
             // 
             this.datEnd.Location = new System.Drawing.Point(95, 65);
             this.datEnd.Name = "datEnd";
-            this.datEnd.Size = new System.Drawing.Size(200, 20);
+            this.datEnd.Size = new System.Drawing.Size(212, 20);
             this.datEnd.TabIndex = 1;
             // 
             // datStart
             // 
             this.datStart.Location = new System.Drawing.Point(95, 29);
             this.datStart.Name = "datStart";
-            this.datStart.Size = new System.Drawing.Size(200, 20);
+            this.datStart.Size = new System.Drawing.Size(212, 20);
             this.datStart.TabIndex = 0;
             // 
             // cntDay
@@ -501,7 +504,7 @@ namespace Reading_Organizer
             this.cntDay.Controls.Add(this.chkBookPercentage);
             this.cntDay.Location = new System.Drawing.Point(183, 27);
             this.cntDay.Name = "cntDay";
-            this.cntDay.Size = new System.Drawing.Size(156, 100);
+            this.cntDay.Size = new System.Drawing.Size(155, 100);
             this.cntDay.TabIndex = 4;
             this.cntDay.TabStop = false;
             this.cntDay.Text = "Day info";
@@ -611,7 +614,7 @@ namespace Reading_Organizer
             this.AcceptButton = this.btnGenerate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 561);
+            this.ClientSize = new System.Drawing.Size(350, 543);
             this.Controls.Add(this.cntBook);
             this.Controls.Add(this.cntDay);
             this.Controls.Add(this.cntDate);
@@ -620,7 +623,7 @@ namespace Reading_Organizer
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(372, 460);
+            this.MinimumSize = new System.Drawing.Size(366, 582);
             this.Name = "MainForm";
             this.Text = "RS Reading Organizer";
             this.menu.ResumeLayout(false);
@@ -685,7 +688,6 @@ namespace Reading_Organizer
         private System.Windows.Forms.RadioButton radDaysOfTheWeek;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radEveryDay;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radProgressPerDay;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numRestDays;
@@ -694,6 +696,7 @@ namespace Reading_Organizer
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.NumericUpDown numProgressPerDay;
         private System.Windows.Forms.NumericUpDown numTotalPages;
+        private System.Windows.Forms.ComboBox cmbProgressType;
     }
 }
 
