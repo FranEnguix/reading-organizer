@@ -19,6 +19,8 @@ using iText.IO.Font;
 using System.Drawing.Text;
 using iText.IO.Font.Constants;
 using System.Collections;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Reading_Organizer
 {
@@ -33,8 +35,18 @@ namespace Reading_Organizer
             // TODO Load component values from file
             // Testing purposes:
             componentValues.Add(cmbProgressType.Name, 0);
+            componentValues.Add(radEndDate.Name, radEndDate.Checked);
+            componentValues.Add(radProgressPerDay.Name, radProgressPerDay.Checked);
+            componentValues.Add(datStart.Name, datStart.Value.AddDays(5));
+
+            string json = JsonSerializer.Serialize(componentValues);
+            Console.WriteLine(json);
+            Hashtable table = JsonSerializer.Deserialize<Hashtable>(json);
+
+            cmbProgressType.SelectedIndex = int.Parse(componentValues[cmbProgressType.Name].ToString());
+            radEndDate.Checked = Boolean.Parse(table[radEndDate.Name].ToString());
+            datStart.Value = DateTime.Parse(table[datStart.Name].ToString());
             // End of Testing
-            cmbProgressType.SelectedIndex = (int) componentValues[cmbProgressType.Name];
         }
 
         private void button1_Click(object sender, EventArgs e) {

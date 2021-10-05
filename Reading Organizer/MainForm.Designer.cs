@@ -621,10 +621,12 @@ namespace Reading_Organizer
             this.Controls.Add(this.cntReading);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menu;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(366, 582);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RS Reading Organizer";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
