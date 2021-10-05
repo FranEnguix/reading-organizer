@@ -557,7 +557,7 @@ namespace Reading_Organizer
             this.numTotalPages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numTotalPages.Location = new System.Drawing.Point(94, 68);
             this.numTotalPages.Maximum = new decimal(new int[] {
-            99999,
+            1400,
             0,
             0,
             0});
@@ -569,9 +569,8 @@ namespace Reading_Organizer
             this.numTotalPages.Name = "numTotalPages";
             this.numTotalPages.Size = new System.Drawing.Size(53, 20);
             this.numTotalPages.TabIndex = 10;
-            this.numTotalPages.ThousandsSeparator = true;
             this.numTotalPages.Value = new decimal(new int[] {
-            99999,
+            1400,
             0,
             0,
             0});
@@ -628,6 +627,7 @@ namespace Reading_Organizer
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RS Reading Organizer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.cntReading.ResumeLayout(false);
