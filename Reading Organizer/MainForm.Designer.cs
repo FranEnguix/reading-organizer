@@ -79,6 +79,7 @@ namespace Reading_Organizer
             this.label2 = new System.Windows.Forms.Label();
             this.chkTotalPages = new System.Windows.Forms.CheckBox();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menu.SuspendLayout();
             this.cntReading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRestDays)).BeginInit();
@@ -128,25 +129,26 @@ namespace Reading_Organizer
             // menNew
             // 
             this.menNew.Name = "menNew";
-            this.menNew.Size = new System.Drawing.Size(121, 22);
+            this.menNew.Size = new System.Drawing.Size(180, 22);
             this.menNew.Text = "New";
             // 
             // menOpen
             // 
             this.menOpen.Name = "menOpen";
-            this.menOpen.Size = new System.Drawing.Size(121, 22);
+            this.menOpen.Size = new System.Drawing.Size(180, 22);
             this.menOpen.Text = "Open...";
+            this.menOpen.Click += new System.EventHandler(this.menOpen_Click);
             // 
             // menSave
             // 
             this.menSave.Name = "menSave";
-            this.menSave.Size = new System.Drawing.Size(121, 22);
+            this.menSave.Size = new System.Drawing.Size(180, 22);
             this.menSave.Text = "Save";
             // 
             // menSaveAs
             // 
             this.menSaveAs.Name = "menSaveAs";
-            this.menSaveAs.Size = new System.Drawing.Size(121, 22);
+            this.menSaveAs.Size = new System.Drawing.Size(180, 22);
             this.menSaveAs.Text = "Save as...";
             this.menSaveAs.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -163,19 +165,19 @@ namespace Reading_Organizer
             // menDateFormat
             // 
             this.menDateFormat.Name = "menDateFormat";
-            this.menDateFormat.Size = new System.Drawing.Size(167, 22);
+            this.menDateFormat.Size = new System.Drawing.Size(180, 22);
             this.menDateFormat.Text = "Date format...";
             // 
             // menFontSettings
             // 
             this.menFontSettings.Name = "menFontSettings";
-            this.menFontSettings.Size = new System.Drawing.Size(167, 22);
+            this.menFontSettings.Size = new System.Drawing.Size(180, 22);
             this.menFontSettings.Text = "Font settings...";
             // 
             // menOutputLocation
             // 
             this.menOutputLocation.Name = "menOutputLocation";
-            this.menOutputLocation.Size = new System.Drawing.Size(167, 22);
+            this.menOutputLocation.Size = new System.Drawing.Size(180, 22);
             this.menOutputLocation.Text = "Output location...";
             // 
             // cntReading
@@ -605,8 +607,14 @@ namespace Reading_Organizer
             // saveFileDialog
             // 
             this.saveFileDialog.DefaultExt = "rot";
-            this.saveFileDialog.Filter = "RS Reading Organizer Template file (*.rot) | All files (*.*)";
+            this.saveFileDialog.Filter = "RS Reading Organizer Template file (*.rot) | *.rot | All files (*.*) | *.*";
             this.saveFileDialog.Title = "Save RS Reading Organizer template";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "rot";
+            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.Filter = "RS Reading Organizer Template | *.rot | All files | *.*";
             // 
             // MainForm
             // 
@@ -699,6 +707,7 @@ namespace Reading_Organizer
         private System.Windows.Forms.NumericUpDown numProgressPerDay;
         private System.Windows.Forms.NumericUpDown numTotalPages;
         private System.Windows.Forms.ComboBox cmbProgressType;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

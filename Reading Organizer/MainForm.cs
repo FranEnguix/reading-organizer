@@ -34,13 +34,28 @@ namespace Reading_Organizer
             // formData = new Hashtable();
             InitializeComponent();
             if (File.Exists(path)) {
-                formData = TemplateFile.LoadTemplate(path);
+                LoadTemplate(path);
             } else {
                 formData = new Hashtable();
                 GetFormData(formData);
             }
             SetFormData(formData);
         }
+
+        private void SaveCurrentTemplate(string path) {
+            GetFormData(formData);
+            SaveTemplate(path, formData);
+        }
+
+        private void SaveTemplate(string path, Hashtable data) {
+            TemplateFile.SaveTemplate(path, data);
+        }
+
+        private void LoadTemplate(string path) {
+            formData = TemplateFile.LoadTemplate(path);
+            SetFormData(formData);
+        }
+
         private void button1_Click(object sender, EventArgs e) {
             Temporal();
         }
@@ -129,14 +144,27 @@ namespace Reading_Organizer
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(this.saveFileDialog.ShowDialog());
-            
+            var dialog = saveFileDialog.ShowDialog();
+            if (dialog == DialogResult.OK) {
+                string fileName = saveFileDialog.FileName;
+                string filePath = Path.GetFullPath(fileName);
+                SaveCurrentTemplate(filePath);
+            }
+        }
+        private void menOpen_Click(object sender, EventArgs e) {
+            var dialog = openFileDialog.ShowDialog();
+            if (dialog == DialogResult.OK) {
+                string fileName = openFileDialog.FileName;
+                string filePath = Path.GetFullPath(fileName);
+                LoadTemplate(filePath);
+            }
         }
 
         private void checkBox8_CheckedChanged(object sender, EventArgs e) {
 
         }
 
+        // Set hashtable data into form
         private void SetFormData(Hashtable data) {
             txtTitle.Text = data[txtTitle.Name].ToString();
             chkTotalPages.Checked = Boolean.Parse(data[chkTotalPages.Name].ToString());
@@ -170,6 +198,7 @@ namespace Reading_Organizer
             cmbProgressType.SelectedIndex = int.Parse(data[cmbProgressType.Name].ToString());
         }
 
+        // Puts form data into hashtable
         private void GetFormData(Hashtable data) {
             data.Clear();
             data.Add(txtTitle.Name, txtTitle.Text);
@@ -218,5 +247,6 @@ namespace Reading_Organizer
             GetFormData(formData);
             TemplateFile.SaveTemplate(path, formData);
         }
+
     }
 }
