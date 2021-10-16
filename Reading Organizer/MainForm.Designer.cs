@@ -100,7 +100,7 @@ namespace Reading_Organizer
             this.btnGenerate.Size = new System.Drawing.Size(326, 23);
             this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "Generate PDF";
-            this.btnGenerate.Click += new System.EventHandler(this.button1_Click);
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // menu
             // 
@@ -131,24 +131,25 @@ namespace Reading_Organizer
             this.menNew.Name = "menNew";
             this.menNew.Size = new System.Drawing.Size(180, 22);
             this.menNew.Text = "New";
+            this.menNew.Click += new System.EventHandler(this.menNew_Click);
             // 
             // menOpen
             // 
             this.menOpen.Name = "menOpen";
-            this.menOpen.Size = new System.Drawing.Size(180, 22);
+            this.menOpen.Size = new System.Drawing.Size(121, 22);
             this.menOpen.Text = "Open...";
             this.menOpen.Click += new System.EventHandler(this.menOpen_Click);
             // 
             // menSave
             // 
             this.menSave.Name = "menSave";
-            this.menSave.Size = new System.Drawing.Size(180, 22);
+            this.menSave.Size = new System.Drawing.Size(121, 22);
             this.menSave.Text = "Save";
             // 
             // menSaveAs
             // 
             this.menSaveAs.Name = "menSaveAs";
-            this.menSaveAs.Size = new System.Drawing.Size(180, 22);
+            this.menSaveAs.Size = new System.Drawing.Size(121, 22);
             this.menSaveAs.Text = "Save as...";
             this.menSaveAs.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -165,19 +166,19 @@ namespace Reading_Organizer
             // menDateFormat
             // 
             this.menDateFormat.Name = "menDateFormat";
-            this.menDateFormat.Size = new System.Drawing.Size(180, 22);
+            this.menDateFormat.Size = new System.Drawing.Size(167, 22);
             this.menDateFormat.Text = "Date format...";
             // 
             // menFontSettings
             // 
             this.menFontSettings.Name = "menFontSettings";
-            this.menFontSettings.Size = new System.Drawing.Size(180, 22);
+            this.menFontSettings.Size = new System.Drawing.Size(167, 22);
             this.menFontSettings.Text = "Font settings...";
             // 
             // menOutputLocation
             // 
             this.menOutputLocation.Name = "menOutputLocation";
-            this.menOutputLocation.Size = new System.Drawing.Size(180, 22);
+            this.menOutputLocation.Size = new System.Drawing.Size(167, 22);
             this.menOutputLocation.Text = "Output location...";
             // 
             // cntReading
@@ -373,6 +374,7 @@ namespace Reading_Organizer
             this.radDaysOfTheWeek.TabIndex = 8;
             this.radDaysOfTheWeek.Text = "Read the following days of the week:";
             this.radDaysOfTheWeek.UseVisualStyleBackColor = true;
+            this.radDaysOfTheWeek.CheckedChanged += new System.EventHandler(this.radDaysOfTheWeek_CheckedChanged);
             // 
             // label4
             // 
@@ -394,6 +396,7 @@ namespace Reading_Organizer
             this.radEveryDay.TabStop = true;
             this.radEveryDay.Text = "Read every";
             this.radEveryDay.UseVisualStyleBackColor = true;
+            this.radEveryDay.CheckedChanged += new System.EventHandler(this.radEveryDay_CheckedChanged);
             // 
             // cntDate
             // 
@@ -462,6 +465,7 @@ namespace Reading_Organizer
             this.radProgressPerDay.TabIndex = 4;
             this.radProgressPerDay.Text = "Amount of progress per day";
             this.radProgressPerDay.UseVisualStyleBackColor = true;
+            this.radProgressPerDay.CheckedChanged += new System.EventHandler(this.radProgressPerDay_CheckedChanged);
             // 
             // radEndDate
             // 
@@ -474,7 +478,7 @@ namespace Reading_Organizer
             this.radEndDate.TabStop = true;
             this.radEndDate.Text = "End Date";
             this.radEndDate.UseVisualStyleBackColor = true;
-            this.radEndDate.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radEndDate.CheckedChanged += new System.EventHandler(this.radEndDate_CheckedChanged);
             // 
             // label1
             // 
@@ -603,6 +607,7 @@ namespace Reading_Organizer
             this.chkTotalPages.TabIndex = 1;
             this.chkTotalPages.Text = "Total pages";
             this.chkTotalPages.UseVisualStyleBackColor = true;
+            this.chkTotalPages.CheckedChanged += new System.EventHandler(this.chkTotalPages_CheckedChanged);
             // 
             // saveFileDialog
             // 

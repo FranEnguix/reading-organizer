@@ -28,11 +28,14 @@ namespace Reading_Organizer
     public partial class MainForm : Form
     {
         private Hashtable formData;
+        private Hashtable newForm;
         private string path = "default.json";
 
         public MainForm() {
             // formData = new Hashtable();
             InitializeComponent();
+            newForm = new Hashtable();
+            GetFormData(newForm);
             if (File.Exists(path)) {
                 LoadTemplate(path);
             } else {
@@ -40,6 +43,7 @@ namespace Reading_Organizer
                 GetFormData(formData);
             }
             SetFormData(formData);
+            UpdateState();
         }
 
         private void SaveCurrentTemplate(string path) {
@@ -56,8 +60,42 @@ namespace Reading_Organizer
             SetFormData(formData);
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-            Temporal();
+        private void UpdateState() {
+            UpdateTotalPages();
+            UpdateReadingOptions();
+            UpdateDate();
+        }
+
+        private void UpdateDate() {
+            datEnd.Enabled = radEndDate.Checked;
+            numProgressPerDay.Enabled = radProgressPerDay.Checked;
+            cmbProgressType.Enabled = radProgressPerDay.Checked && chkTotalPages.Checked;
+        }
+
+        private void UpdateReadingOptions() {
+            numReadDays.Enabled = radEveryDay.Checked;
+            numRestDays.Enabled = radEveryDay.Checked;
+            chk1.Enabled = radDaysOfTheWeek.Checked;
+            chk2.Enabled = radDaysOfTheWeek.Checked;
+            chk3.Enabled = radDaysOfTheWeek.Checked;
+            chk4.Enabled = radDaysOfTheWeek.Checked;
+            chk5.Enabled = radDaysOfTheWeek.Checked;
+            chk6.Enabled = radDaysOfTheWeek.Checked;
+            chk7.Enabled = radDaysOfTheWeek.Checked;
+            txt1.Enabled = radDaysOfTheWeek.Checked;
+            txt2.Enabled = radDaysOfTheWeek.Checked;
+            txt3.Enabled = radDaysOfTheWeek.Checked;
+            txt4.Enabled = radDaysOfTheWeek.Checked;
+            txt5.Enabled = radDaysOfTheWeek.Checked;
+            txt6.Enabled = radDaysOfTheWeek.Checked;
+            txt7.Enabled = radDaysOfTheWeek.Checked;
+        }
+
+        private void UpdateTotalPages() {
+            chkCurrentPage.Enabled = chkTotalPages.Checked;
+            numTotalPages.Enabled = chkTotalPages.Checked;
+            if (!chkTotalPages.Checked)
+                cmbProgressType.SelectedIndex = 0;
         }
 
         private static void Temporal() {
@@ -136,10 +174,6 @@ namespace Reading_Organizer
             }
             document.Add(table);
             document.Close();
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e) {
-
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -248,5 +282,33 @@ namespace Reading_Organizer
             TemplateFile.SaveTemplate(path, formData);
         }
 
+        private void btnGenerar_Click(object sender, EventArgs e) {
+            Temporal();
+        }
+
+        private void chkTotalPages_CheckedChanged(object sender, EventArgs e) {
+            UpdateState();
+        }
+
+        private void radDaysOfTheWeek_CheckedChanged(object sender, EventArgs e) {
+            UpdateState();
+        }
+
+        private void radEveryDay_CheckedChanged(object sender, EventArgs e) {
+            UpdateState();
+        }
+
+        private void radEndDate_CheckedChanged(object sender, EventArgs e) {
+            UpdateState();
+        }
+
+        private void radProgressPerDay_CheckedChanged(object sender, EventArgs e) {
+            UpdateState();
+        }
+
+        private void menNew_Click(object sender, EventArgs e) {
+            SetFormData(newForm);
+            UpdateState();
+        }
     }
 }
