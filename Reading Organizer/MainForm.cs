@@ -28,14 +28,31 @@ namespace Reading_Organizer
     public partial class MainForm : Form
     {
         private Hashtable formData;
+        private Hashtable preferences;
         private Hashtable newForm;
         private string path = "default.json";
 
         public MainForm() {
-            // formData = new Hashtable();
             InitializeComponent();
+            SetupPreferences();
+            SetupNewFormData();
+            SetupFormData();
+            UpdateState();
+        }
+
+        private void SetupPreferences() {
+            preferences = new Hashtable();
+            preferences["daysOfTheWeek"] = new string[] {
+                "L", "M", "X", "J", "V", "S", "D"
+            };
+        }
+
+        private void SetupNewFormData() {
             newForm = new Hashtable();
             GetFormData(newForm);
+        }
+
+        private void SetupFormData() {
             if (File.Exists(path)) {
                 LoadTemplate(path);
             } else {
@@ -43,7 +60,6 @@ namespace Reading_Organizer
                 GetFormData(formData);
             }
             SetFormData(formData);
-            UpdateState();
         }
 
         private void SaveCurrentTemplate(string path) {
@@ -96,6 +112,17 @@ namespace Reading_Organizer
             numTotalPages.Enabled = chkTotalPages.Checked;
             if (!chkTotalPages.Checked)
                 cmbProgressType.SelectedIndex = 0;
+        }
+
+        private void GeneratePdf() {
+            GetFormData(formData);
+            string pdfName = txtTitle.Text + ".pdf";
+            //TODO: string pdfPath = path + pdfName
+            PdfGenerator pdfGenerator = new PdfGenerator();
+            pdfGenerator.FilePath = pdfName;
+            pdfGenerator.FormData = formData;
+            pdfGenerator.Preferences = preferences;
+            pdfGenerator.GeneratePdf();
         }
 
         private static void Temporal() {
@@ -174,6 +201,7 @@ namespace Reading_Organizer
             }
             document.Add(table);
             document.Close();
+            System.Diagnostics.Process.Start("holi.pdf");
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,10 +220,6 @@ namespace Reading_Organizer
                 string filePath = Path.GetFullPath(fileName);
                 LoadTemplate(filePath);
             }
-        }
-
-        private void checkBox8_CheckedChanged(object sender, EventArgs e) {
-
         }
 
         // Set hashtable data into form
@@ -283,7 +307,8 @@ namespace Reading_Organizer
         }
 
         private void btnGenerar_Click(object sender, EventArgs e) {
-            Temporal();
+            GeneratePdf();
+            //Temporal();
         }
 
         private void chkTotalPages_CheckedChanged(object sender, EventArgs e) {

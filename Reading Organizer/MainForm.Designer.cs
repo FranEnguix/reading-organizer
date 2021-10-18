@@ -315,7 +315,6 @@ namespace Reading_Organizer
             this.chk4.TabIndex = 13;
             this.chk4.Text = "4th day of the week, named:";
             this.chk4.UseVisualStyleBackColor = true;
-            this.chk4.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
             // 
             // chk3
             // 
