@@ -36,29 +36,47 @@ namespace Reading_Organizer
             this.menOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.menSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.menExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menPreferences = new System.Windows.Forms.ToolStripMenuItem();
             this.menDateFormat = new System.Windows.Forms.ToolStripMenuItem();
-            this.menFontSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menOutputLocation = new System.Windows.Forms.ToolStripMenuItem();
+            this.menDaysOfWeek = new System.Windows.Forms.ToolStripMenuItem();
+            this.menReadingUnits = new System.Windows.Forms.ToolStripMenuItem();
+            this.menPages = new System.Windows.Forms.ToolStripMenuItem();
+            this.menPercentage = new System.Windows.Forms.ToolStripMenuItem();
             this.cntReading = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lbl1units = new System.Windows.Forms.Label();
+            this.lbl1day = new System.Windows.Forms.Label();
+            this.cmb1 = new System.Windows.Forms.ComboBox();
+            this.num1 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.numRestDays = new System.Windows.Forms.NumericUpDown();
-            this.txt7 = new System.Windows.Forms.TextBox();
-            this.txt6 = new System.Windows.Forms.TextBox();
-            this.txt5 = new System.Windows.Forms.TextBox();
-            this.txt4 = new System.Windows.Forms.TextBox();
-            this.txt3 = new System.Windows.Forms.TextBox();
-            this.txt2 = new System.Windows.Forms.TextBox();
-            this.txt1 = new System.Windows.Forms.TextBox();
-            this.chk7 = new System.Windows.Forms.CheckBox();
-            this.chk6 = new System.Windows.Forms.CheckBox();
-            this.chk5 = new System.Windows.Forms.CheckBox();
-            this.chk4 = new System.Windows.Forms.CheckBox();
-            this.chk3 = new System.Windows.Forms.CheckBox();
-            this.chk2 = new System.Windows.Forms.CheckBox();
-            this.chk1 = new System.Windows.Forms.CheckBox();
             this.numReadDays = new System.Windows.Forms.NumericUpDown();
-            this.radDaysOfTheWeek = new System.Windows.Forms.RadioButton();
+            this.radDaysOfWeek = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.radEveryDay = new System.Windows.Forms.RadioButton();
             this.cntDate = new System.Windows.Forms.GroupBox();
@@ -82,6 +100,13 @@ namespace Reading_Organizer
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menu.SuspendLayout();
             this.cntReading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRestDays)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReadDays)).BeginInit();
             this.cntDate.SuspendLayout();
@@ -95,9 +120,9 @@ namespace Reading_Organizer
             // 
             this.btnGenerate.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.Location = new System.Drawing.Point(12, 513);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 294);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(326, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(658, 23);
             this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "Generate PDF";
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerar_Click);
@@ -111,7 +136,7 @@ namespace Reading_Organizer
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menu.Size = new System.Drawing.Size(350, 24);
+            this.menu.Size = new System.Drawing.Size(680, 24);
             this.menu.TabIndex = 1;
             this.menu.Text = "menu";
             // 
@@ -121,7 +146,8 @@ namespace Reading_Organizer
             this.menNew,
             this.menOpen,
             this.menSave,
-            this.menSaveAs});
+            this.menSaveAs,
+            this.menExit});
             this.menFile.Name = "menFile";
             this.menFile.Size = new System.Drawing.Size(37, 22);
             this.menFile.Text = "File";
@@ -129,7 +155,7 @@ namespace Reading_Organizer
             // menNew
             // 
             this.menNew.Name = "menNew";
-            this.menNew.Size = new System.Drawing.Size(180, 22);
+            this.menNew.Size = new System.Drawing.Size(121, 22);
             this.menNew.Text = "New";
             this.menNew.Click += new System.EventHandler(this.menNew_Click);
             // 
@@ -153,12 +179,19 @@ namespace Reading_Organizer
             this.menSaveAs.Text = "Save as...";
             this.menSaveAs.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
+            // menExit
+            // 
+            this.menExit.Name = "menExit";
+            this.menExit.Size = new System.Drawing.Size(121, 22);
+            this.menExit.Text = "Exit";
+            // 
             // menPreferences
             // 
             this.menPreferences.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menDateFormat,
-            this.menFontSettings,
-            this.menOutputLocation});
+            this.menOutputLocation,
+            this.menDaysOfWeek,
+            this.menReadingUnits});
             this.menPreferences.Name = "menPreferences";
             this.menPreferences.Size = new System.Drawing.Size(80, 22);
             this.menPreferences.Text = "Preferences";
@@ -166,49 +199,511 @@ namespace Reading_Organizer
             // menDateFormat
             // 
             this.menDateFormat.Name = "menDateFormat";
-            this.menDateFormat.Size = new System.Drawing.Size(167, 22);
+            this.menDateFormat.Size = new System.Drawing.Size(172, 22);
             this.menDateFormat.Text = "Date format...";
-            // 
-            // menFontSettings
-            // 
-            this.menFontSettings.Name = "menFontSettings";
-            this.menFontSettings.Size = new System.Drawing.Size(167, 22);
-            this.menFontSettings.Text = "Font settings...";
             // 
             // menOutputLocation
             // 
             this.menOutputLocation.Name = "menOutputLocation";
-            this.menOutputLocation.Size = new System.Drawing.Size(167, 22);
+            this.menOutputLocation.Size = new System.Drawing.Size(172, 22);
             this.menOutputLocation.Text = "Output location...";
+            // 
+            // menDaysOfWeek
+            // 
+            this.menDaysOfWeek.Name = "menDaysOfWeek";
+            this.menDaysOfWeek.Size = new System.Drawing.Size(172, 22);
+            this.menDaysOfWeek.Text = "Days of the week...";
+            // 
+            // menReadingUnits
+            // 
+            this.menReadingUnits.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menPages,
+            this.menPercentage});
+            this.menReadingUnits.Name = "menReadingUnits";
+            this.menReadingUnits.Size = new System.Drawing.Size(172, 22);
+            this.menReadingUnits.Text = "Reading units";
+            // 
+            // menPages
+            // 
+            this.menPages.Name = "menPages";
+            this.menPages.Size = new System.Drawing.Size(133, 22);
+            this.menPages.Text = "Pages";
+            // 
+            // menPercentage
+            // 
+            this.menPercentage.Name = "menPercentage";
+            this.menPercentage.Size = new System.Drawing.Size(133, 22);
+            this.menPercentage.Text = "Percentage";
             // 
             // cntReading
             // 
+            this.cntReading.Controls.Add(this.label15);
+            this.cntReading.Controls.Add(this.label16);
+            this.cntReading.Controls.Add(this.comboBox6);
+            this.cntReading.Controls.Add(this.numericUpDown6);
+            this.cntReading.Controls.Add(this.label13);
+            this.cntReading.Controls.Add(this.label14);
+            this.cntReading.Controls.Add(this.comboBox5);
+            this.cntReading.Controls.Add(this.numericUpDown5);
+            this.cntReading.Controls.Add(this.label11);
+            this.cntReading.Controls.Add(this.label12);
+            this.cntReading.Controls.Add(this.comboBox4);
+            this.cntReading.Controls.Add(this.numericUpDown4);
+            this.cntReading.Controls.Add(this.label9);
+            this.cntReading.Controls.Add(this.label10);
+            this.cntReading.Controls.Add(this.comboBox3);
+            this.cntReading.Controls.Add(this.numericUpDown3);
+            this.cntReading.Controls.Add(this.label7);
+            this.cntReading.Controls.Add(this.label8);
+            this.cntReading.Controls.Add(this.comboBox2);
+            this.cntReading.Controls.Add(this.numericUpDown2);
+            this.cntReading.Controls.Add(this.label3);
+            this.cntReading.Controls.Add(this.label6);
+            this.cntReading.Controls.Add(this.comboBox1);
+            this.cntReading.Controls.Add(this.numericUpDown1);
+            this.cntReading.Controls.Add(this.lbl1units);
+            this.cntReading.Controls.Add(this.lbl1day);
+            this.cntReading.Controls.Add(this.cmb1);
+            this.cntReading.Controls.Add(this.num1);
             this.cntReading.Controls.Add(this.label5);
             this.cntReading.Controls.Add(this.numRestDays);
-            this.cntReading.Controls.Add(this.txt7);
-            this.cntReading.Controls.Add(this.txt6);
-            this.cntReading.Controls.Add(this.txt5);
-            this.cntReading.Controls.Add(this.txt4);
-            this.cntReading.Controls.Add(this.txt3);
-            this.cntReading.Controls.Add(this.txt2);
-            this.cntReading.Controls.Add(this.txt1);
-            this.cntReading.Controls.Add(this.chk7);
-            this.cntReading.Controls.Add(this.chk6);
-            this.cntReading.Controls.Add(this.chk5);
-            this.cntReading.Controls.Add(this.chk4);
-            this.cntReading.Controls.Add(this.chk3);
-            this.cntReading.Controls.Add(this.chk2);
-            this.cntReading.Controls.Add(this.chk1);
             this.cntReading.Controls.Add(this.numReadDays);
-            this.cntReading.Controls.Add(this.radDaysOfTheWeek);
+            this.cntReading.Controls.Add(this.radDaysOfWeek);
             this.cntReading.Controls.Add(this.label4);
             this.cntReading.Controls.Add(this.radEveryDay);
-            this.cntReading.Location = new System.Drawing.Point(12, 133);
+            this.cntReading.Location = new System.Drawing.Point(344, 27);
             this.cntReading.Name = "cntReading";
-            this.cntReading.Size = new System.Drawing.Size(326, 237);
+            this.cntReading.Size = new System.Drawing.Size(326, 261);
             this.cntReading.TabIndex = 2;
             this.cntReading.TabStop = false;
             this.cntReading.Text = "Reading";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(257, 236);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(64, 13);
+            this.label15.TabIndex = 58;
+            this.label15.Text = "percentage.";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(92, 236);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 13);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "1st day of the week";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "Read",
+            "Rest",
+            "Calculate"});
+            this.comboBox6.Location = new System.Drawing.Point(14, 228);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(72, 21);
+            this.comboBox6.TabIndex = 55;
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown6.DecimalPlaces = 1;
+            this.numericUpDown6.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numericUpDown6.Location = new System.Drawing.Point(198, 229);
+            this.numericUpDown6.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown6.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown6.TabIndex = 56;
+            this.numericUpDown6.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(257, 209);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 13);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "percentage.";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(92, 209);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 13);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "1st day of the week";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Read",
+            "Rest",
+            "Calculate"});
+            this.comboBox5.Location = new System.Drawing.Point(14, 201);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(72, 21);
+            this.comboBox5.TabIndex = 51;
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown5.DecimalPlaces = 1;
+            this.numericUpDown5.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numericUpDown5.Location = new System.Drawing.Point(198, 202);
+            this.numericUpDown5.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown5.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown5.TabIndex = 52;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(257, 182);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 13);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "percentage.";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(92, 182);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 13);
+            this.label12.TabIndex = 49;
+            this.label12.Text = "1st day of the week";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Read",
+            "Rest",
+            "Calculate"});
+            this.comboBox4.Location = new System.Drawing.Point(14, 174);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(72, 21);
+            this.comboBox4.TabIndex = 47;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown4.DecimalPlaces = 1;
+            this.numericUpDown4.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numericUpDown4.Location = new System.Drawing.Point(198, 175);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown4.TabIndex = 48;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(257, 155);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 13);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "percentage.";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(92, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 13);
+            this.label10.TabIndex = 45;
+            this.label10.Text = "1st day of the week";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Read",
+            "Rest",
+            "Calculate"});
+            this.comboBox3.Location = new System.Drawing.Point(14, 147);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(72, 21);
+            this.comboBox3.TabIndex = 43;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown3.DecimalPlaces = 1;
+            this.numericUpDown3.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numericUpDown3.Location = new System.Drawing.Point(198, 148);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown3.TabIndex = 44;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(257, 128);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "percentage.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(92, 128);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 13);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "1st day of the week";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Read",
+            "Rest",
+            "Calculate"});
+            this.comboBox2.Location = new System.Drawing.Point(14, 120);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(72, 21);
+            this.comboBox2.TabIndex = 39;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown2.DecimalPlaces = 1;
+            this.numericUpDown2.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numericUpDown2.Location = new System.Drawing.Point(198, 121);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown2.TabIndex = 40;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(257, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "percentage.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(92, 101);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 13);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "1st day of the week";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Read",
+            "Rest",
+            "Calculate"});
+            this.comboBox1.Location = new System.Drawing.Point(14, 93);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(72, 21);
+            this.comboBox1.TabIndex = 35;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown1.DecimalPlaces = 1;
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numericUpDown1.Location = new System.Drawing.Point(198, 94);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown1.TabIndex = 36;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lbl1units
+            // 
+            this.lbl1units.AutoSize = true;
+            this.lbl1units.Location = new System.Drawing.Point(257, 74);
+            this.lbl1units.Name = "lbl1units";
+            this.lbl1units.Size = new System.Drawing.Size(64, 13);
+            this.lbl1units.TabIndex = 34;
+            this.lbl1units.Text = "percentage.";
+            // 
+            // lbl1day
+            // 
+            this.lbl1day.AutoSize = true;
+            this.lbl1day.Location = new System.Drawing.Point(92, 74);
+            this.lbl1day.Name = "lbl1day";
+            this.lbl1day.Size = new System.Drawing.Size(100, 13);
+            this.lbl1day.TabIndex = 33;
+            this.lbl1day.Text = "1st day of the week";
+            // 
+            // cmb1
+            // 
+            this.cmb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmb1.FormattingEnabled = true;
+            this.cmb1.Items.AddRange(new object[] {
+            "Read",
+            "Rest",
+            "Calculate"});
+            this.cmb1.Location = new System.Drawing.Point(14, 66);
+            this.cmb1.Name = "cmb1";
+            this.cmb1.Size = new System.Drawing.Size(72, 21);
+            this.cmb1.TabIndex = 13;
+            // 
+            // num1
+            // 
+            this.num1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.num1.DecimalPlaces = 1;
+            this.num1.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.num1.Location = new System.Drawing.Point(198, 67);
+            this.num1.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.num1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.num1.Name = "num1";
+            this.num1.Size = new System.Drawing.Size(53, 20);
+            this.num1.TabIndex = 26;
+            this.num1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -226,125 +721,6 @@ namespace Reading_Organizer
             this.numRestDays.Name = "numRestDays";
             this.numRestDays.Size = new System.Drawing.Size(44, 20);
             this.numRestDays.TabIndex = 24;
-            // 
-            // txt7
-            // 
-            this.txt7.Location = new System.Drawing.Point(185, 203);
-            this.txt7.Name = "txt7";
-            this.txt7.Size = new System.Drawing.Size(122, 20);
-            this.txt7.TabIndex = 23;
-            // 
-            // txt6
-            // 
-            this.txt6.Location = new System.Drawing.Point(185, 180);
-            this.txt6.Name = "txt6";
-            this.txt6.Size = new System.Drawing.Size(122, 20);
-            this.txt6.TabIndex = 22;
-            // 
-            // txt5
-            // 
-            this.txt5.Location = new System.Drawing.Point(185, 157);
-            this.txt5.Name = "txt5";
-            this.txt5.Size = new System.Drawing.Size(122, 20);
-            this.txt5.TabIndex = 21;
-            // 
-            // txt4
-            // 
-            this.txt4.Location = new System.Drawing.Point(185, 135);
-            this.txt4.Name = "txt4";
-            this.txt4.Size = new System.Drawing.Size(122, 20);
-            this.txt4.TabIndex = 20;
-            // 
-            // txt3
-            // 
-            this.txt3.Location = new System.Drawing.Point(185, 112);
-            this.txt3.Name = "txt3";
-            this.txt3.Size = new System.Drawing.Size(122, 20);
-            this.txt3.TabIndex = 19;
-            // 
-            // txt2
-            // 
-            this.txt2.Location = new System.Drawing.Point(185, 89);
-            this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(122, 20);
-            this.txt2.TabIndex = 18;
-            // 
-            // txt1
-            // 
-            this.txt1.Location = new System.Drawing.Point(185, 66);
-            this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(122, 20);
-            this.txt1.TabIndex = 17;
-            // 
-            // chk7
-            // 
-            this.chk7.AutoSize = true;
-            this.chk7.Location = new System.Drawing.Point(18, 203);
-            this.chk7.Name = "chk7";
-            this.chk7.Size = new System.Drawing.Size(161, 17);
-            this.chk7.TabIndex = 16;
-            this.chk7.Text = "7th day of the week, named:";
-            this.chk7.UseVisualStyleBackColor = true;
-            // 
-            // chk6
-            // 
-            this.chk6.AutoSize = true;
-            this.chk6.Location = new System.Drawing.Point(18, 181);
-            this.chk6.Name = "chk6";
-            this.chk6.Size = new System.Drawing.Size(161, 17);
-            this.chk6.TabIndex = 15;
-            this.chk6.Text = "6th day of the week, named:";
-            this.chk6.UseVisualStyleBackColor = true;
-            // 
-            // chk5
-            // 
-            this.chk5.AutoSize = true;
-            this.chk5.Location = new System.Drawing.Point(18, 158);
-            this.chk5.Name = "chk5";
-            this.chk5.Size = new System.Drawing.Size(161, 17);
-            this.chk5.TabIndex = 14;
-            this.chk5.Text = "5th day of the week, named:";
-            this.chk5.UseVisualStyleBackColor = true;
-            // 
-            // chk4
-            // 
-            this.chk4.AutoSize = true;
-            this.chk4.Location = new System.Drawing.Point(18, 135);
-            this.chk4.Name = "chk4";
-            this.chk4.Size = new System.Drawing.Size(161, 17);
-            this.chk4.TabIndex = 13;
-            this.chk4.Text = "4th day of the week, named:";
-            this.chk4.UseVisualStyleBackColor = true;
-            // 
-            // chk3
-            // 
-            this.chk3.AutoSize = true;
-            this.chk3.Location = new System.Drawing.Point(18, 112);
-            this.chk3.Name = "chk3";
-            this.chk3.Size = new System.Drawing.Size(161, 17);
-            this.chk3.TabIndex = 12;
-            this.chk3.Text = "3rd day of the week, named:";
-            this.chk3.UseVisualStyleBackColor = true;
-            // 
-            // chk2
-            // 
-            this.chk2.AutoSize = true;
-            this.chk2.Location = new System.Drawing.Point(18, 90);
-            this.chk2.Name = "chk2";
-            this.chk2.Size = new System.Drawing.Size(164, 17);
-            this.chk2.TabIndex = 11;
-            this.chk2.Text = "2nd day of the week, named:";
-            this.chk2.UseVisualStyleBackColor = true;
-            // 
-            // chk1
-            // 
-            this.chk1.AutoSize = true;
-            this.chk1.Location = new System.Drawing.Point(18, 67);
-            this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(160, 17);
-            this.chk1.TabIndex = 10;
-            this.chk1.Text = "1st day of the week, named:";
-            this.chk1.UseVisualStyleBackColor = true;
             // 
             // numReadDays
             // 
@@ -364,16 +740,16 @@ namespace Reading_Organizer
             0,
             0});
             // 
-            // radDaysOfTheWeek
+            // radDaysOfWeek
             // 
-            this.radDaysOfTheWeek.AutoSize = true;
-            this.radDaysOfTheWeek.Location = new System.Drawing.Point(10, 43);
-            this.radDaysOfTheWeek.Name = "radDaysOfTheWeek";
-            this.radDaysOfTheWeek.Size = new System.Drawing.Size(200, 17);
-            this.radDaysOfTheWeek.TabIndex = 8;
-            this.radDaysOfTheWeek.Text = "Read the following days of the week:";
-            this.radDaysOfTheWeek.UseVisualStyleBackColor = true;
-            this.radDaysOfTheWeek.CheckedChanged += new System.EventHandler(this.radDaysOfTheWeek_CheckedChanged);
+            this.radDaysOfWeek.AutoSize = true;
+            this.radDaysOfWeek.Location = new System.Drawing.Point(10, 43);
+            this.radDaysOfWeek.Name = "radDaysOfWeek";
+            this.radDaysOfWeek.Size = new System.Drawing.Size(175, 17);
+            this.radDaysOfWeek.TabIndex = 8;
+            this.radDaysOfWeek.Text = "The following days of the week:";
+            this.radDaysOfWeek.UseVisualStyleBackColor = true;
+            this.radDaysOfWeek.CheckedChanged += new System.EventHandler(this.radDaysOfTheWeek_CheckedChanged);
             // 
             // label4
             // 
@@ -406,9 +782,9 @@ namespace Reading_Organizer
             this.cntDate.Controls.Add(this.label1);
             this.cntDate.Controls.Add(this.datEnd);
             this.cntDate.Controls.Add(this.datStart);
-            this.cntDate.Location = new System.Drawing.Point(12, 376);
+            this.cntDate.Location = new System.Drawing.Point(12, 154);
             this.cntDate.Name = "cntDate";
-            this.cntDate.Size = new System.Drawing.Size(326, 131);
+            this.cntDate.Size = new System.Drawing.Size(326, 134);
             this.cntDate.TabIndex = 3;
             this.cntDate.TabStop = false;
             this.cntDate.Text = "Date";
@@ -460,9 +836,9 @@ namespace Reading_Organizer
             this.radProgressPerDay.AutoSize = true;
             this.radProgressPerDay.Location = new System.Drawing.Point(9, 99);
             this.radProgressPerDay.Name = "radProgressPerDay";
-            this.radProgressPerDay.Size = new System.Drawing.Size(154, 17);
+            this.radProgressPerDay.Size = new System.Drawing.Size(149, 17);
             this.radProgressPerDay.TabIndex = 4;
-            this.radProgressPerDay.Text = "Amount of progress per day";
+            this.radProgressPerDay.Text = "Calculate end date for me.";
             this.radProgressPerDay.UseVisualStyleBackColor = true;
             this.radProgressPerDay.CheckedChanged += new System.EventHandler(this.radProgressPerDay_CheckedChanged);
             // 
@@ -507,9 +883,9 @@ namespace Reading_Organizer
             this.cntDay.Controls.Add(this.chkDate);
             this.cntDay.Controls.Add(this.chkCurrentPage);
             this.cntDay.Controls.Add(this.chkBookPercentage);
-            this.cntDay.Location = new System.Drawing.Point(183, 27);
+            this.cntDay.Location = new System.Drawing.Point(180, 27);
             this.cntDay.Name = "cntDay";
-            this.cntDay.Size = new System.Drawing.Size(155, 100);
+            this.cntDay.Size = new System.Drawing.Size(158, 100);
             this.cntDay.TabIndex = 4;
             this.cntDay.TabStop = false;
             this.cntDay.Text = "Day info";
@@ -552,7 +928,7 @@ namespace Reading_Organizer
             this.cntBook.Controls.Add(this.chkTotalPages);
             this.cntBook.Location = new System.Drawing.Point(12, 27);
             this.cntBook.Name = "cntBook";
-            this.cntBook.Size = new System.Drawing.Size(156, 100);
+            this.cntBook.Size = new System.Drawing.Size(158, 100);
             this.cntBook.TabIndex = 5;
             this.cntBook.TabStop = false;
             this.cntBook.Text = "Book info";
@@ -625,7 +1001,7 @@ namespace Reading_Organizer
             this.AcceptButton = this.btnGenerate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 543);
+            this.ClientSize = new System.Drawing.Size(680, 329);
             this.Controls.Add(this.cntBook);
             this.Controls.Add(this.cntDay);
             this.Controls.Add(this.cntDate);
@@ -635,7 +1011,6 @@ namespace Reading_Organizer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menu;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(366, 582);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RS Reading Organizer";
@@ -644,6 +1019,13 @@ namespace Reading_Organizer
             this.menu.PerformLayout();
             this.cntReading.ResumeLayout(false);
             this.cntReading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRestDays)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReadDays)).EndInit();
             this.cntDate.ResumeLayout(false);
@@ -684,34 +1066,52 @@ namespace Reading_Organizer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chkTotalPages;
         private System.Windows.Forms.ToolStripMenuItem menDateFormat;
-        private System.Windows.Forms.TextBox txt7;
-        private System.Windows.Forms.TextBox txt6;
-        private System.Windows.Forms.TextBox txt5;
-        private System.Windows.Forms.TextBox txt4;
-        private System.Windows.Forms.TextBox txt3;
-        private System.Windows.Forms.TextBox txt2;
-        private System.Windows.Forms.TextBox txt1;
-        private System.Windows.Forms.CheckBox chk7;
-        private System.Windows.Forms.CheckBox chk6;
-        private System.Windows.Forms.CheckBox chk5;
-        private System.Windows.Forms.CheckBox chk4;
-        private System.Windows.Forms.CheckBox chk3;
-        private System.Windows.Forms.CheckBox chk2;
-        private System.Windows.Forms.CheckBox chk1;
         private System.Windows.Forms.NumericUpDown numReadDays;
-        private System.Windows.Forms.RadioButton radDaysOfTheWeek;
+        private System.Windows.Forms.RadioButton radDaysOfWeek;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radEveryDay;
         private System.Windows.Forms.RadioButton radProgressPerDay;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numRestDays;
-        private System.Windows.Forms.ToolStripMenuItem menFontSettings;
         private System.Windows.Forms.ToolStripMenuItem menOutputLocation;
+        private System.Windows.Forms.ToolStripMenuItem menDaysOfWeek;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.NumericUpDown numProgressPerDay;
         private System.Windows.Forms.NumericUpDown numTotalPages;
         private System.Windows.Forms.ComboBox cmbProgressType;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem menExit;
+        private System.Windows.Forms.NumericUpDown num1;
+        private System.Windows.Forms.Label lbl1day;
+        private System.Windows.Forms.ComboBox cmb1;
+        private System.Windows.Forms.Label lbl1units;
+        private System.Windows.Forms.ToolStripMenuItem menReadingUnits;
+        private System.Windows.Forms.ToolStripMenuItem menPages;
+        private System.Windows.Forms.ToolStripMenuItem menPercentage;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

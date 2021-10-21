@@ -42,7 +42,8 @@ namespace Reading_Organizer
 
         private void SetupPreferences() {
             preferences = new Hashtable();
-            preferences["daysOfTheWeek"] = new string[] {
+            preferences["firstDayOfWeek"] = DayOfWeek.Monday;
+            preferences["daysOfWeek"] = new string[] {
                 "L", "M", "X", "J", "V", "S", "D"
             };
         }
@@ -53,12 +54,16 @@ namespace Reading_Organizer
         }
 
         private void SetupFormData() {
+            /*
             if (File.Exists(path)) {
                 LoadTemplate(path);
             } else {
                 formData = new Hashtable();
                 GetFormData(formData);
             }
+            */
+                formData = new Hashtable(); // delete
+                GetFormData(formData);      // delete
             SetFormData(formData);
         }
 
@@ -89,22 +94,24 @@ namespace Reading_Organizer
         }
 
         private void UpdateReadingOptions() {
+            /*
             numReadDays.Enabled = radEveryDay.Checked;
             numRestDays.Enabled = radEveryDay.Checked;
-            chk1.Enabled = radDaysOfTheWeek.Checked;
-            chk2.Enabled = radDaysOfTheWeek.Checked;
-            chk3.Enabled = radDaysOfTheWeek.Checked;
-            chk4.Enabled = radDaysOfTheWeek.Checked;
-            chk5.Enabled = radDaysOfTheWeek.Checked;
-            chk6.Enabled = radDaysOfTheWeek.Checked;
-            chk7.Enabled = radDaysOfTheWeek.Checked;
-            txt1.Enabled = radDaysOfTheWeek.Checked;
-            txt2.Enabled = radDaysOfTheWeek.Checked;
-            txt3.Enabled = radDaysOfTheWeek.Checked;
-            txt4.Enabled = radDaysOfTheWeek.Checked;
-            txt5.Enabled = radDaysOfTheWeek.Checked;
-            txt6.Enabled = radDaysOfTheWeek.Checked;
-            txt7.Enabled = radDaysOfTheWeek.Checked;
+            chk1.Enabled = radDaysOfWeek.Checked;
+            chk2.Enabled = radDaysOfWeek.Checked;
+            chk3.Enabled = radDaysOfWeek.Checked;
+            chk4.Enabled = radDaysOfWeek.Checked;
+            chk5.Enabled = radDaysOfWeek.Checked;
+            chk6.Enabled = radDaysOfWeek.Checked;
+            chk7.Enabled = radDaysOfWeek.Checked;
+            txt1.Enabled = radDaysOfWeek.Checked;
+            txt2.Enabled = radDaysOfWeek.Checked;
+            txt3.Enabled = radDaysOfWeek.Checked;
+            txt4.Enabled = radDaysOfWeek.Checked;
+            txt5.Enabled = radDaysOfWeek.Checked;
+            txt6.Enabled = radDaysOfWeek.Checked;
+            txt7.Enabled = radDaysOfWeek.Checked;
+            */
         }
 
         private void UpdateTotalPages() {
@@ -224,6 +231,7 @@ namespace Reading_Organizer
 
         // Set hashtable data into form
         private void SetFormData(Hashtable data) {
+            /*
             txtTitle.Text = data[txtTitle.Name].ToString();
             chkTotalPages.Checked = Boolean.Parse(data[chkTotalPages.Name].ToString());
             numTotalPages.Value = int.Parse(data[numTotalPages.Name].ToString());
@@ -233,7 +241,7 @@ namespace Reading_Organizer
             radEveryDay.Checked = Boolean.Parse(data[radEveryDay.Name].ToString());
             numReadDays.Value = int.Parse(data[numReadDays.Name].ToString());
             numRestDays.Value = int.Parse(data[numRestDays.Name].ToString());
-            radDaysOfTheWeek.Checked = Boolean.Parse(data[radDaysOfTheWeek.Name].ToString());
+            radDaysOfWeek.Checked = Boolean.Parse(data[radDaysOfWeek.Name].ToString());
             chk1.Checked = Boolean.Parse(data[chk1.Name].ToString());
             chk2.Checked = Boolean.Parse(data[chk2.Name].ToString());
             chk3.Checked = Boolean.Parse(data[chk3.Name].ToString());
@@ -241,7 +249,7 @@ namespace Reading_Organizer
             chk5.Checked = Boolean.Parse(data[chk5.Name].ToString());
             chk6.Checked = Boolean.Parse(data[chk6.Name].ToString());
             chk7.Checked = Boolean.Parse(data[chk7.Name].ToString());
-            txt1.Text = data[txt1.Name].ToString();
+            num1.Value = (decimal) data[num1.Name];
             txt2.Text = data[txt2.Name].ToString();
             txt3.Text = data[txt3.Name].ToString();
             txt4.Text = data[txt4.Name].ToString();
@@ -254,10 +262,12 @@ namespace Reading_Organizer
             radProgressPerDay.Checked = Boolean.Parse(data[radProgressPerDay.Name].ToString());
             numProgressPerDay.Value = TextToDecimal(data[numProgressPerDay.Name].ToString());
             cmbProgressType.SelectedIndex = int.Parse(data[cmbProgressType.Name].ToString());
+            */
         }
 
         // Puts form data into hashtable
         private void GetFormData(Hashtable data) {
+            /*
             data.Clear();
             data.Add(txtTitle.Name, txtTitle.Text);
             data.Add(chkTotalPages.Name, chkTotalPages.Checked);
@@ -268,7 +278,7 @@ namespace Reading_Organizer
             data.Add(radEveryDay.Name, radEveryDay.Checked);
             data.Add(numReadDays.Name, numReadDays.Value);
             data.Add(numRestDays.Name, numRestDays.Value);
-            data.Add(radDaysOfTheWeek.Name, radDaysOfTheWeek.Checked);
+            data.Add(radDaysOfWeek.Name, radDaysOfWeek.Checked);
             data.Add(chk1.Name, chk1.Checked);
             data.Add(chk2.Name, chk2.Checked);
             data.Add(chk3.Name, chk3.Checked);
@@ -276,7 +286,7 @@ namespace Reading_Organizer
             data.Add(chk5.Name, chk5.Checked);
             data.Add(chk6.Name, chk6.Checked);
             data.Add(chk7.Name, chk7.Checked);
-            data.Add(txt1.Name, txt1.Text);
+            data.Add(num1.Name, num1.Value);
             data.Add(txt2.Name, txt2.Text);
             data.Add(txt3.Name, txt3.Text);
             data.Add(txt4.Name, txt4.Text);
@@ -289,6 +299,7 @@ namespace Reading_Organizer
             data.Add(radProgressPerDay.Name, radProgressPerDay.Checked);
             data.Add(numProgressPerDay.Name, numProgressPerDay.Value);
             data.Add(cmbProgressType.Name, cmbProgressType.SelectedIndex);
+            */
         }
 
         private decimal TextToDecimal(string text) {
